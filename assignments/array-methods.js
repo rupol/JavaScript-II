@@ -497,15 +497,13 @@ console.log(largeDonors);
 
 // Problem 2
 // After the 5k run, thank you notes have to be sent out to donors. The director, whose first name starts with "R", got drunk and already sent out all the thank you notes to companies that start with "R". Create a new array called thankYou indicating which companies have recieved thank you cards.
-const thankYou = runners.map(company => {
+let thankYou = runners.map(company => {
   if (company.company_name.charAt(0) === "R") {
-    company.thank_you = "Y";
+    thank_you = "Y";
   } else {
-    company.thank_you = "N";
+    thank_you = "N";
   }
-  return `company_name: ${company.company_name}, thank_you: ${
-    company.thank_you
-  }`;
+  return `company_name: ${company.company_name}, thank_you: ${thank_you}`;
 });
 console.log(thankYou);
 
