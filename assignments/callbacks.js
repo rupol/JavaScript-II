@@ -65,10 +65,30 @@ function contains(item, list, cb) {
 }
 contains("Gum", items, present => console.log(present));
 
+console.log("\n///// callbacks stretch");
 /* STRETCH PROBLEM */
+const numbers = [0, 0, 1, 1, 2, 2, 4, 16, 23, 8, 12, 4, 16];
+const foods = [
+  "cheese",
+  "bean",
+  "tomato",
+  "bean",
+  "tortilla",
+  "sour cream",
+  "cheese",
+  "green chile"
+];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let uniqueArray = [];
+  uniqueArray = array.sort().filter(function(value, position, array) {
+    return !position || value != array[position - 1];
+  });
+  return cb(uniqueArray);
 }
+
+removeDuplicates(numbers, remove => console.log(remove));
+removeDuplicates(foods, remove => console.log(remove));
